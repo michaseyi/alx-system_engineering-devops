@@ -11,10 +11,10 @@ echo "$filename file exists"
    content="$(cat $filename)"
    elif [ -d "$filename" ]
    then
-   content=""
+   content="d"
    fi
 
-   if [ -n "$content" ]
+   if [ -z "$content" ]
    then
    echo "$filename file is empty"
    else
