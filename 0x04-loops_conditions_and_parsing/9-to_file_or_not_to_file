@@ -6,9 +6,15 @@ then
 echo "$filename file does not exist"
 else
 echo "$filename file exists"
-   if [ -f "$filename" ]; then  content="$(cat $filename)" ; fi
+   if [ -f "$filename" ]
+   then  
+   content="$(cat $filename)"
+   elif [ -d "$filename" ]
+   then
+   content=""
+   fi
 
-   if [ -z "$content" ]
+   if [ -n "$content" ]
    then
    echo "$filename file is empty"
    else
