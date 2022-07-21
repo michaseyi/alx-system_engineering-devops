@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays the content of the current directory in list format
+LIST=$(ls)
+for i in $LIST
+do
+echo "${i##*-}"
+done
