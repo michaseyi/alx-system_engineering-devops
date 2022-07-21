@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# read and cut
+LIST=$(cat /etc/passwd)
+i=1
+
+while [ $i -lt 2 ]
+do
+echo "$LIST" | cut -s --fields=$i,3,6 --delim=:
+((i++))
+done
