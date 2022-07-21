@@ -5,7 +5,7 @@ if [ ! -e $filename ]
 then
 echo "$filename file does not exist"
 else
-echo "$filename file exist"
+echo "$filename file exists"
    if [ -f "$filename" ]; then  content="$(cat $filename)" ; fi
 
    if [ -z "$content" ]
