@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Stops a process
+pkill --signal TERM -f 7-highlander
