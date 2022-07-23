@@ -5,7 +5,6 @@ then
 echo "Usage: manage_my_process {start|stop|restart}"
 exit
 fi
-
 if [ "$1" == "start" ]
 then 
 ./manage_my_process  2>/dev/null 1>/dev/null </dev/null &
