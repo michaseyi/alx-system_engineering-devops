@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # manages manage_my_process process
-if [ $# -lt 1 ]
+if [ $# -lt 1 -o $# -gt 1 ]
 then 
 echo "Usage: manage_my_process {start|stop|restart}"
-exit
+exit 0
 fi
 if [ "$1" == "start" ]
 then 
