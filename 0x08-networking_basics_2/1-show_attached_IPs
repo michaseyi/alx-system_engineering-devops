@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# shows attached ipv4 address
+
+ifconfig | grep -Eo 'inet ([0-9]*\.){3}[0-9]*' | cut --bytes=6-
