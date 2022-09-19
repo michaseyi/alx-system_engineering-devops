@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # configures a new ubuntu machine to run an nginx server
-apt-get install -y nginx 
+sudo apt-get install -y nginx 
 echo "Hello World!" > index.html
-mv index.html /var/www/html
-service nginx restart
+sudo mv index.html /var/www/html
+sudo service nginx restart
