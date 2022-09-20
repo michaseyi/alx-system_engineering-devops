@@ -12,7 +12,7 @@ $config = "server {
 }
 "
 package { 'nginx':
-  provider => 'gem'
+  ensure => 'installed',
 }
 
 file { 'index.html':
@@ -28,6 +28,3 @@ file { 'server_config':
   content => $config
 }
 
-exec { 'service nginx restart':
-  path => ['/usr/sbin', '/usr/bin']
-}
