@@ -28,3 +28,6 @@ file { 'server_config':
   content => $config
 }
 
+exec { 'service nginx restart':
+  path => ['/usr/sbin', '/usr/bin']
+}
