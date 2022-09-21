@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# configures a apache on a server
+apt update
+apt install -y apache2
+mkdir -p /var/www/html
+echo "Hello Holberton" > index.html
+mv index.html /var/www/html
+service apache2 start
