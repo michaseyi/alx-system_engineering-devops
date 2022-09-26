@@ -5,7 +5,7 @@ $config = 'server {
   
   root /var/www/html;
   index index.html;
-  add_header X-Served-By \$hostname;
+  add_header X-Served-By $hostname;
 }
 '
 package { 'nginx':
