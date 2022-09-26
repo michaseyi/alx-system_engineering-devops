@@ -4,19 +4,12 @@ $config = 'server {
   listen [::]:80 default_server;
   
   root /var/www/html;
-  index index.html;
+  index index.html index.htm index.nginx-debian.html;
   add_header X-Served-By $hostname;
 }
 '
 package { 'nginx':
   ensure => 'installed',
-}
-
-file { 'index.html':
-  ensure  => 'present',
-  path    => '/var/www/html/index.html',
-  content => 'Hello World!',
-  mode    => '0644'
 }
 
 file { 'server_config':
