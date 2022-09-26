@@ -1,5 +1,5 @@
 # configures nginx on a server
-$config = "server {
+$config = 'server {
   listen 80 default_server;
   listen [::]:80 default_server;
   
@@ -7,7 +7,7 @@ $config = "server {
   index index.html;
   add_header X-Served-By \$hostname;
 }
-"
+'
 package { 'nginx':
   ensure => 'installed',
 }
