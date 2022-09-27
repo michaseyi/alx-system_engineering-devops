@@ -1,7 +1,7 @@
 # configures nginx on a server
 
 exec { 'install_nginx':
-  command  => 'apt-get -y update; apt-get -y install nginx;',
+  command  => 'sudo apt-get -y update; sudo apt-get -y install nginx;',
   provider => shell
 }
 
@@ -11,7 +11,7 @@ exec { 'nginx_config':
 }
 
 exec { 'restart_nginx':
-  command  => 'service nginx restart',
+  command  => 'sudo service nginx restart',
   provider => shell
 }
 
