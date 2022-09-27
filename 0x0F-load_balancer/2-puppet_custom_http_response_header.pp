@@ -4,7 +4,7 @@ package { 'nginx':
 }
 
 exec { 'server_config':
-  command => "sed -i '/server {/a add_header X-Served-By \$hostname;' /etc/nginx/sites-available/default",
+  command => 'sed -i "/server {/a add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default',
   path    => ['/usr/sbin', '/usr/bin']
 }
 
