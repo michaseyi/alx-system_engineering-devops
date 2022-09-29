@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Congigures nginx to listen on port 80
-sudo sed -i 's/listen *[0-9]* *default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
+sudo sed -i 's/listen *[0-9]* *default_server/listen 80 default_server/;/listen \[::\]/d' /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
