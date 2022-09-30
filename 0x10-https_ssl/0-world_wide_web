@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+ print_doman_info() {
+    full_doman="$2"."$1" 
+    dig "$full_doman" | grep -A1 'ANSWER SECTION:' | tail -n1 |
+        awk -v subdomain="$2" '{printf "The subdomain %s is a A record and points to %s\n", subdomain, $5 }'
+ }
+
+ subdomains=(www lb-01 web-01 web-02)
+
+ if [ $# -eq 1 ]; then
+     for subdomain in "${subdomains[@]}"
+     do
+         print_doman_info "$1" "$subdomain"
+     done
+elif [ $# -gt 1 ]; then
+    print_doman_info "$1" "$2"
+fi
+
