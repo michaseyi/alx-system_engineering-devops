@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#runs nginx as nginx user on port 8080
+
+
