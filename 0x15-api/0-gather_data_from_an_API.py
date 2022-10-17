@@ -12,18 +12,11 @@ if __name__ == '__main__':
     user = requests.get(base_url + '/users/{}'.format(user_id)).json()
     params = {'userId': user_id}
     todos = requests.get(base_url + '/todos', params=params).json()
-    completed_todos = reduce(
-        lambda a,
-        b: a +
-        1 if b['completed'] else a +
-        0,
-        todos,
-        0)
-
+    completed_todos = [todo for todo in todos if todo.get('completed')]
     print('Employee {} is done with tasks({}/{}):'.format(
-        user['name'],
-        completed_todos,
+        user.get('name'),
+        len(completed_todos),
         len(todos)
     ))
-    for todo in todos:
-        print('\t {}'.format(todo['title']))
+    for todo in completed_todos:
+        print('\t {}'.format(todo.get('title')))
